@@ -125,8 +125,8 @@ body {
     border-radius: 50%; /* ボタンを円形にする */
     cursor: pointer;
     z-index: 1;
-    width: 6vw; /* ビューポート幅に応じたボタンの幅 */
-    height: 6vw; /* ビューポート幅に応じたボタンの高さ */
+    width: 8vw; /* ビューポート幅に応じたボタンの幅 */
+    height: 8vw; /* ビューポート幅に応じたボタンの高さ */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,5 +139,5 @@ body {
 
 /* Font Awesomeアイコンのスタイル */
 .reset-button i {
-    font-size: calc(3vw + 3vh); /* ビューポート幅と高さに応じたアイコンサイズ */
+    font-size: calc(4vw + 4vh); /* ビューポート幅と高さに応じたアイコンサイズ */
 }
