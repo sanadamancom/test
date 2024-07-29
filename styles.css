@@ -1,0 +1,143 @@
+/* ベーススタイル */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* スクロールバーを非表示にする */
+}
+
+/* コンテナをウィンドウサイズに合わせる */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ビューポートの高さに合わせる */
+    width: 100vw; /* ビューポートの幅に合わせる */
+    position: relative;
+}
+
+/* プレイヤー用のグリッドレイアウト */
+.counters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1vw; /* プレイヤータイル間の隙間 */
+    width: 98vw; /* ビューポートの80%の幅 */
+    height: 98vh; /* ビューポートの80%の高さ */
+}
+
+/* プレイヤーのタイルスタイル */
+.counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    cursor: pointer;
+    user-select: none; /* テキスト選択を無効化 */
+    font-size: 20vw; /* ビューポート幅に応じたフォントサイズ */
+    width: 100%;
+    height: 100%;
+}
+
+/* プレイヤーごとの色設定 */
+#player1 {
+    background-color: #ffcccc; /* プレイヤー1の背景色 */
+}
+
+#player2 {
+    background-color: #ccffcc; /* プレイヤー2の背景色 */
+}
+
+#player3 {
+    background-color: #ccccff; /* プレイヤー3の背景色 */
+}
+
+#player4 {
+    background-color: #ffffcc; /* プレイヤー4の背景色 */
+}
+
+/* プレイヤー1と2用の回転スタイル */
+#player1 .life-total,
+#player2 .life-total {
+    transform: rotate(180deg);
+}
+
+/* 点滅エフェクト */
+.flash {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 0;
+}
+
+.flash.left {
+    left: 0;
+}
+
+.flash.right {
+    right: 0;
+}
+
+.flash.visible {
+    opacity: 1;
+}
+
+/* プレイヤーごとの点滅エフェクト設定 */
+#player1 .flash.left,
+#player2 .flash.left {
+    background: rgba(255, 255, 255, 0.6); /* 左側点滅の背景色 */
+}
+
+#player1 .flash.right,
+#player2 .flash.right {
+    background: rgba(255, 255, 255, 0.6); /* 右側点滅の背景色 */
+}
+
+#player3 .flash.left,
+#player4 .flash.left {
+    background: rgba(255, 255, 255, 0.6); /* 左側点滅の背景色 */
+}
+
+#player3 .flash.right,
+#player4 .flash.right {
+    background: rgba(255, 255, 255, 0.6); /* 右側点滅の背景色 */
+}
+
+/* リセットボタンのスタイル */
+.reset-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    background-color: #007bff; /* ボタンの背景色 */
+    color: white; /* ボタンの文字色 */
+    border: none;
+    border-radius: 50%; /* ボタンを円形にする */
+    cursor: pointer;
+    z-index: 1;
+    width: 4vw; /* ビューポート幅に応じたボタンの幅 */
+    height: 4vw; /* ビューポート幅に応じたボタンの高さ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ボタンに影を追加 */
+}
+
+.reset-button:hover {
+    background-color: #0056b3; /* ホバー時の背景色 */
+}
+
+/* Font Awesomeアイコンのスタイル */
+.reset-button i {
+    font-size: calc(2vw + 2vh); /* ビューポート幅と高さに応じたアイコンサイズ */
+}
