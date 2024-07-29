@@ -22,8 +22,8 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 1vw; /* プレイヤータイル間の隙間 */
-    width: 98vw; /* ビューポートの80%の幅 */
-    height: 98vh; /* ビューポートの80%の高さ */
+    width: 80vw; /* ビューポートの80%の幅 */
+    height: 80vh; /* ビューポートの80%の高さ */
 }
 
 /* プレイヤーのタイルスタイル */
