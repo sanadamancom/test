@@ -11,8 +11,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* ビューポートの高さに合わせる */
-    width: 100vw; /* ビューポートの幅に合わせる */
+    height: 95vh; /* ビューポートの高さに合わせる */
+    width: 95vw; /* ビューポートの幅に合わせる */
     position: relative;
 }
 
